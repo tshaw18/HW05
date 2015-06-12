@@ -1,0 +1,58 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+void promt(int *size){
+	cout << "How many inputs? ";
+	cin >> *size;
+}
+
+//template<typename T>
+//T * alloc_array(int size)
+//{
+//
+//	int *numbers = new int[size];
+//
+//	for (int i = 0; i < size; i++)
+//		numbers[i] = NULL;
+//
+//	return numbers;
+//}
+
+template<typename T>
+void *populate_numbers(T* arrays, int size) {
+	for (int* curr = arrays; curr < arrays + size; curr++) {
+		cout << "Enter element: ";
+		cin >> *curr;
+	}
+	
+}
+
+template<typename T>
+T min(T array[], int size) {
+	T min = numbers[0];
+	for (int i = 1; i < size; i++){
+		if (numbers[i] < numbers[i - 1]){
+			min = numbers[i];
+		}
+	}
+	return min;
+}
+
+
+template<typename T>
+int main() {
+	
+	int num;
+	promt(&num);
+
+
+
+	int *numbers = alloc_array(num);
+	populate_numbers(numbers, num);
+	
+	cout << "The smallest element is: " << min<string>(numbers, num) << endl;
+
+
+	return 0;
+}
